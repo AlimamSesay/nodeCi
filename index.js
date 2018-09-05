@@ -8,9 +8,12 @@ const keys = require('./config/keys');
 require('./models/User');
 require('./models/Blog');
 require('./services/passport');
+require('./services/cache');
 
 mongoose.Promise = global.Promise;
-mongoose.connect(keys.mongoURI, { useMongoClient: true });
+// mongoose.connect(keys.mongoURI, { useMongoClient: true });
+// mongoose.connect('mongodb://localhost/blog_everyone', {server: {socketOptions: {keepAlive: 120}}});
+mongoose.connect('mongodb://127.0.0.1/blog_everyone');
 
 const app = express();
 
