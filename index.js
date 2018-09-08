@@ -13,7 +13,7 @@ require('./services/cache');
 mongoose.Promise = global.Promise;
 // mongoose.connect(keys.mongoURI, { useMongoClient: true });
 // mongoose.connect('mongodb://localhost/blog_everyone', {server: {socketOptions: {keepAlive: 120}}});
-mongoose.connect('mongodb://127.0.0.1/blog_everyone');
+mongoose.connect('mongodb://127.0.0.1/blog_everyone', { useMongoClient: true });
 
 const app = express();
 
